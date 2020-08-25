@@ -1,0 +1,27 @@
+
+
+.menu-btn{
+    position: absolute;
+    z-index: 3;
+    right: 35px;
+    top: 35px;
+    cursor: pointer;
+    @include easeOut;
+
+    span {
+        width: 28px;
+        display: block;
+        height: 3px;
+        margin: 0 0 5px 0;
+        background-color: #fff;
+        @include easeOut; 
+    }
+
+    &.close{
+        span{
+            &:first-child{ transform: rotate(45deg) translate(5px, 5px); }
+            &:last-child{ transform: rotate(-45deg) translate(0px, 0px); }
+            &:nth-child(2){ display: none; }
+        }
+    }
+}
