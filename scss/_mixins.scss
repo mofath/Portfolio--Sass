@@ -24,3 +24,34 @@
 
     }
 }
+
+//media querry mixins
+
+// will only apply if screen 500px or less
+@mixin mediaSm{
+    @media screen and (max-width:500px){
+        @content;
+    }
+}
+
+// will only apply if screen less than 768
+@mixin mediaMd{
+    @media screen and (max-width:768px){
+        @content;
+    }
+}
+
+// will only apply if screen between 769px and 1170px
+@mixin mediaLg{
+    @media screen and (min-width:769px) and (max-width:1170px){
+        @content;
+    }
+}
+
+// will only apply if screen 500px or less
+@mixin mediaXL{
+    @media screen and (min-width:1171px){
+        @content;
+    }
+}
+

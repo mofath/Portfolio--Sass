@@ -1,7 +1,7 @@
 @import 'variables';
 @import 'mixins';
 @import 'menu';
-
+@import 'mobile';
 
 *{
     box-sizing: border-box;
@@ -32,6 +32,7 @@ h1, h2, h3 {
         padding: 0.2rem 1rem;
         background-color: rgba(lighten($primary-color, 2), 0.5);
     }
+
 }
 
 a{
@@ -60,7 +61,6 @@ main{
             }
         }
     }
-
     &#home{
         overflow: hidden;
         h1{
