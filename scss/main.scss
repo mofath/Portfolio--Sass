@@ -1,7 +1,7 @@
 @import 'variables';
 @import 'mixins';
 @import 'menu';
-@import 'mobile';
+
 
 *{
     box-sizing: border-box;
@@ -11,11 +11,12 @@
 body{
     @include backgroud;
     background-color: $primary-color ;
-
-    // color: #FFF;
+    color: set-text-color($primary-color);
     height: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.5;
+    padding: 0;
+    margin: 0;
 }
 
 
@@ -36,7 +37,7 @@ h1, h2, h3 {
 }
 
 a{
-    color: #FFF;
+    color: set-text-color($primary-color);
     text-decoration: none;
 }
 
@@ -50,7 +51,7 @@ header{
 
 main{
     padding: 4rem;
-    height: 100%;
+    min-height: calc(100vh - 60px);
     .icons{
         margin-top: 1rem;
         a{
@@ -73,3 +74,46 @@ main{
         
     }
 }
+
+
+.about-info{
+    display: grid;
+    grid-gap: 30px;
+    grid-template-areas: 
+    'bioimg bio bio'
+    'exp1 exp2 exp3' ;
+    grid-template-columns: repeat(3, 1fr);
+    
+    .bio-img{
+        grid-area: bioimg;
+        margin: auto;
+        border: solid 3px $secondary-color;
+        border-radius: 50%;
+        max-width: 250px;
+        max-height: 250px;
+    }
+
+    .bio{ grid-area: bio; }
+
+    .job:nth-child(1){ grid-area: exp1; }
+    .job:nth-child(2){ grid-area: exp2; }
+    .job:nth-child(3){ grid-area: exp3; }
+
+    .job{
+        background: lighten($primary-color, 5);
+        border-bottom: $secondary-color 5px solid;
+        padding: 0.5rem;
+    }
+}
+
+footer{
+    text-align: center;
+    padding: 1rem;
+    background-color: darken($primary-color, 10);
+    color: set-text-color($primary-color);
+    height: 60px;
+    margin: 0;
+}
+
+
+@import 'mobile';

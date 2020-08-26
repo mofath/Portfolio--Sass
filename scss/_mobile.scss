@@ -42,6 +42,18 @@
         max-width: 150px;
         max-height: 150px;
     }
+
+
+    .about-info{
+        grid-template-areas: 
+        'bioimg'
+        'bio'
+        'exp1'
+        'exp2'
+        'exp3' ;
+
+        grid-template-columns: 1fr;   
+    }
 }
 
 

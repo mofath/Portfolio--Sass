@@ -25,6 +25,16 @@
     }
 }
 
+@function set-text-color($color){
+    @if(lightness($color) > 40){
+        @return #000;
+    }
+    @else{
+        @return #fff
+    }
+}
+
+
 //media querry mixins
 
 // will only apply if screen 500px or less
