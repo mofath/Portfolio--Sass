@@ -4,70 +4,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="ico" href="img/favicon.png" />
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/skill-solar-system.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Mhmd Fathi | About</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <title>Mhmd Fathi | Portofolio</title>
 </head>
 
-<body>
-    <header>
-        <div class="menu-btn">
+<body id="about" class="theme light-theme">
+
+    <!-- Start Header -->
+    <header class="header">
+        <div class="menu-toggler">
             <span></span>
             <span></span>
             <span></span>
         </div>
 
-        <nav class="menu">
-            <div class="menu-branding">
-                <div class="prtorait"> </div>
-            </div>
-
-            <ul class="menu-nav">
-                <li class="nav-item"><a href="index.html">Home</a></li>
-                <li class="nav-item current"><a href="about.html">About</a></li>
-                <li class="nav-item"><a href="work.html">My Work</a></li>
-                <li class="nav-item"><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="mode-toggler">
+            <input type="checkbox" id="toggleBtn" />
+            <label for="toggleBtn">
+                <span class="toggle-icon">
+                    <img src="./img/icons-png/sun.svg" alt="sun icon" class="icon sun" />
+                    <img src="./img/icons-png/moon.svg" alt="moon icon" class="icon moon" />
+                </span>
+            </label>
+        </div>
     </header>
+    <!-- End Header -->
 
-    <main id="about">
+    <!-- Start Menu -->
+    <nav class="menu">
+        <div class="menu-branding">
+            <div class="prtorait"> </div>
+        </div>
+
+        <ul class="menu-nav">
+            <li class="nav-item"><a href="index.html"><img src="./img/icons-png/planet3.svg" /><span>Home</span></a>
+            </li>
+            <li class="nav-item current"><a href="about.html"><img
+                        src="./img/icons-png/planet5.svg" /><span>About</span></a></li>
+            <li class="nav-item"><a href="work.html"><img src="./img/icons-png/planet6.svg" /><span>Works</span></a>
+            </li>
+            <li class="nav-item"><a href="contact.html"><img
+                        src="./img/icons-png/astronauts1.svg" /><span>Contact</span></a></li>
+        </ul>
+    </nav>
+    <!-- End Menu -->
+
+
+    <main id="about-main">
         <h1 class="lg-heading">about <span>me</span></h1>
         <h2 class="sm-heading">A little about me...</h2>
 
-        <div class="about-info">
+        <div class="info">
             <img src="img/portrait.jpg" class="bio-img">
-            
+
             <div class="bio">
-                <h3>BIO</h3>
-                <h6>developer</h6>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit consectetur,
-                    repellat a laborum reiciendis, quaerat corporis quia error minus, possimus
-                    architecto ipsum laboriosam magnam at officiis itaque deserunt corrupti asperiores.
+                <h3 class="title">BIO</h3>
+                <h5 class="sub-title">full stack developer</h5>
+                <p>
+                    Dynamic and devoted full stack developer seeking junior position.
+                    Alwas keep an eye on quality and details not only get things work
+                    Also I’m focused and always looking for new challenges that could
+                    push my career forward satisfy my desire for learning and gaining new skills.
                 </p>
             </div>
 
-            <div class="job">
-                <h3>job123</h3>
-                <h6>developer</h6>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit consectetur,
-                    repellat a laborum reiciendis, quaerat corporis quia error minus, possimus
-                    architecto ipsum laboriosam magnam at officiis itaque deserunt corrupti asperiores.
+            <div class="exp">
+                <h4 class="exp-title"><strong>9-Months Sholarship, ITI, Open Source Dep.</strong></h4>
+                <p>Intensive training program: concerned with web development,
+                    Networking, security, cloud.
+                </p>
+                <div class="break"></div>
+                <p>
+                    Main Courses: Java, Python (django), Node.js (Express.js), JavaScript (React, Angular, React),
+                    React native, C, C++ and RedHat Admin I & II.
                 </p>
             </div>
-            <div class="job">
-                <h3>job123</h3>
-                <h6>developer</h6>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit consectetur,
-                    repellat a laborum reiciendis, quaerat corporis quia error minus, possimus
-                    architecto ipsum laboriosam magnam at officiis itaque deserunt corrupti asperiores.
+            <div class="exp">
+                <h4 class="exp-title"><strong>Tech-startup program, NTI</strong></h4>
+                <p>Content: Web development, Digital Marketing, Project Management, and IoT.
                 </p>
+                <div class="break"></div>
+                <p>Capstone project: Smart Home.</p>
             </div>
-            <div class="job">
-                <h3>job123</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit consectetur,
-                    repellat a laborum reiciendis, quaerat corporis quia error minus, possimus
-                    architecto ipsum laboriosam magnam at officiis itaque deserunt corrupti asperiores.
+            <div class="exp">
+                <h4 class="exp-title"><strong>B. E., Mechatronics, Future University (FUE)</strong></h4>
+                <p> "Mechatronics, is a multidisciplinary is a combination of robotics,
+                    electronics, computer, telecommunications, systems, control, and product engineering." ~ Wikibedia
                 </p>
             </div>
         </div>

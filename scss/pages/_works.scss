@@ -1,0 +1,54 @@
+.theme{
+    .projects{
+        display: grid;
+        grid-gap: 0.7rem;
+        grid-template-columns: repeat(3, 1fr);
+        img{
+            width: 100%;
+            &:hover{
+                opacity: 0.5;
+                @include easeOut;
+            }
+        }
+    }
+}
+
+
+// widescreen
+@include mediaXL {
+    .theme{    
+        .projects{
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+}
+
+// Desktop
+@include mediaLg {
+    .theme{    
+        .projects{
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+// tablets
+@include mediaMd {
+    .theme{    
+        .projects{
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+// smartphones
+@include mediaSm {
+    .theme{    
+        .projects{
+            grid-template-columns:  1fr;
+        }
+    }
+}
+
+
+

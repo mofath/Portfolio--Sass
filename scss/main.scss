@@ -1,119 +1,15 @@
-@import 'variables';
-@import 'mixins';
-@import 'menu';
+@import 'helpers/variables';
+@import 'helpers/mixins';
 
+@import 'layout/header';
+@import 'layout/theme';
 
-*{
-    box-sizing: border-box;
-}
+@import 'pages/homepage';
+@import 'pages/about';
+@import 'pages/works.scss';
 
+@import 'components/buttons';
+@import 'components/headings';
+@import 'components/menu';
 
-body{
-    @include backgroud;
-    background-color: $primary-color ;
-    color: set-text-color($primary-color);
-    height: 100%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.5;
-    padding: 0;
-    margin: 0;
-}
-
-
-// Headings
-h1, h2, h3 {
-    margin:0;
-    font-weight: 400;
-    &.lg-heading{
-        font-size: 6rem;
-    }
-
-    &.sm-heading{
-        margin-bottom: 2rem;
-        padding: 0.2rem 1rem;
-        background-color: rgba(lighten($primary-color, 2), 0.5);
-    }
-
-}
-
-a{
-    color: set-text-color($primary-color);
-    text-decoration: none;
-}
-
-header{
-    position: fixed;
-    z-index: 2;
-    width: 100%;
-}
-
-
-
-main{
-    padding: 4rem;
-    min-height: calc(100vh - 60px);
-    .icons{
-        margin-top: 1rem;
-        a{
-            padding: 0.4rem;
-            &:hover{
-                color: $secondary-color;
-                @include easeOut();
-            }
-        }
-    }
-    &#home{
-        overflow: hidden;
-        h1{
-            margin-top: 20vh;
-            span{
-                color: $secondary-color;
-            }
-        }
-
-        
-    }
-}
-
-
-.about-info{
-    display: grid;
-    grid-gap: 30px;
-    grid-template-areas: 
-    'bioimg bio bio'
-    'exp1 exp2 exp3' ;
-    grid-template-columns: repeat(3, 1fr);
-    
-    .bio-img{
-        grid-area: bioimg;
-        margin: auto;
-        border: solid 3px $secondary-color;
-        border-radius: 50%;
-        max-width: 250px;
-        max-height: 250px;
-    }
-
-    .bio{ grid-area: bio; }
-
-    .job:nth-child(1){ grid-area: exp1; }
-    .job:nth-child(2){ grid-area: exp2; }
-    .job:nth-child(3){ grid-area: exp3; }
-
-    .job{
-        background: lighten($primary-color, 5);
-        border-bottom: $secondary-color 5px solid;
-        padding: 0.5rem;
-    }
-}
-
-footer{
-    text-align: center;
-    padding: 1rem;
-    background-color: darken($primary-color, 10);
-    color: set-text-color($primary-color);
-    height: 60px;
-    margin: 0;
-}
-
-
-@import 'mobile';
+@import 'layout/footer';
