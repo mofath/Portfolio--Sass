@@ -46,6 +46,7 @@
 @include mediaLg {
     .theme{
         #home-main{
+            overflow: hidden;
             grid-template-areas: 'content' 'solar';
             grid-template-columns: 1fr;
             .content{

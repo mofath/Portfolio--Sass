@@ -107,12 +107,31 @@ header {
   color: #412901;
   background-color: rgba(225, 213, 255, 0.5); }
 
-.light-theme#about, .light-theme#works {
+.light-theme #contact-main .button-success {
+  color: white; }
+
+.light-theme #contact-main #name, .light-theme #contact-main #email, .light-theme #contact-main textarea {
+  border: solid 1px #badefe; }
+
+.light-theme #contact-main button {
+  outline: none;
+  border: none;
+  background-color: #a38ce8;
+  color: white; }
+  .light-theme #contact-main button:hover {
+    outline: none;
+    background-color: #c5b7f1; }
+
+.light-theme#about, .light-theme#works .light-theme#contact {
   background: url(../img/background/cloudy.gif);
   background-attachment: fixed;
   background-size: cover;
   z-index: -1; }
-  .light-theme#about:after, .light-theme#works:after {
+  .light-theme#about small, .light-theme#works .light-theme#contact small {
+    font-size: 14px;
+    font-weight: 400;
+    color: #01111f; }
+  .light-theme#about:after, .light-theme#works .light-theme#contact:after {
     content: "";
     position: fixed;
     top: 0;
@@ -177,16 +196,32 @@ header {
   .dark-theme .sm-heading {
     color: #e6e6e6;
     background-color: rgba(17, 4, 54, 0.5); }
-  .dark-theme#about, .dark-theme#works {
+  .dark-theme #contact-main .button-success {
+    color: white; }
+  .dark-theme #contact-main #name, .dark-theme #contact-main #email, .dark-theme #contact-main textarea {
+    border: solid 1px #fbfffc; }
+  .dark-theme #contact-main button {
+    outline: none;
+    border: none;
+    background-color: #06c225;
+    color: white; }
+    .dark-theme #contact-main button:hover {
+      outline: none;
+      background-color: #36f856; }
+  .dark-theme#about, .dark-theme#about .dark-theme#contact {
     background: url(../img/background/stary.gif);
     background-attachment: fixed;
     background-size: cover;
     z-index: -1; }
-    .dark-theme#about .title, .dark-theme#works .title {
+    .dark-theme#about .title, .dark-theme#about .dark-theme#contact .title {
       color: #08f32f; }
-    .dark-theme#about .sub-title, .dark-theme#works .sub-title {
+    .dark-theme#about .sub-title, .dark-theme#about .dark-theme#contact .sub-title {
       color: #b3b3b3; }
-    .dark-theme#about:after, .dark-theme#works:after {
+    .dark-theme#about small, .dark-theme#about .dark-theme#contact small {
+      font-size: 14px;
+      font-weight: 400;
+      color: #9a9a9a; }
+    .dark-theme#about:after, .dark-theme#about .dark-theme#contact:after {
       content: "";
       position: fixed;
       top: 0;
@@ -227,7 +262,7 @@ header {
     margin: 0 0; }
   .theme main, .light-theme main, .dark-theme main {
     padding: 5rem 6rem 5rem 5%;
-    min-height: calc(100vh - 60px); }
+    min-height: calc(100vh - 130px); }
   .theme a, .light-theme a, .dark-theme a {
     text-decoration: none; }
   @media screen and (max-width: 768px) {
@@ -273,6 +308,7 @@ header {
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
   .theme #home-main, .light-theme #home-main, .dark-theme #home-main {
+    overflow: hidden;
     grid-template-areas: 'content' 'solar';
     grid-template-columns: 1fr; }
     .theme #home-main .content, .light-theme #home-main .content, .dark-theme #home-main .content {
@@ -367,6 +403,55 @@ header {
   .theme .projects, .light-theme .projects, .dark-theme .projects {
     grid-template-columns: 1fr; } }
 
+.theme #contact-main, .light-theme #contact-main, .dark-theme #contact-main {
+  overflow: hidden;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas: 'form gif';
+  grid-template-columns: 60% 40%; }
+  .theme #contact-main main, .light-theme #contact-main main, .dark-theme #contact-main main {
+    overflow: hidden;
+    grid-area: form; }
+  .theme #contact-main aside, .light-theme #contact-main aside, .dark-theme #contact-main aside {
+    grid-area: gif;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center; }
+    .theme #contact-main aside .hire-me, .light-theme #contact-main aside .hire-me, .dark-theme #contact-main aside .hire-me {
+      text-align: center; }
+      .theme #contact-main aside .hire-me img, .light-theme #contact-main aside .hire-me img, .dark-theme #contact-main aside .hire-me img {
+        width: 300px;
+        height: auto; }
+  .theme #contact-main .button-success, .light-theme #contact-main .button-success, .dark-theme #contact-main .button-success {
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background: #1cb841;
+    /* this is a green */ }
+  .theme #contact-main button, .light-theme #contact-main button, .dark-theme #contact-main button {
+    float: right;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 3px; }
+  .theme #contact-main .text, .light-theme #contact-main .text, .dark-theme #contact-main .text {
+    font-weight: bold; }
+  .theme #contact-main #name, .light-theme #contact-main #name, .dark-theme #contact-main #name, .theme #contact-main #email, .light-theme #contact-main #email, .dark-theme #contact-main #email, .theme #contact-main textarea, .light-theme #contact-main textarea, .dark-theme #contact-main textarea {
+    width: 100%;
+    outline: none;
+    padding: 5px;
+    border-radius: 5px; }
+  .theme #contact-main fieldset, .light-theme #contact-main fieldset, .dark-theme #contact-main fieldset {
+    padding: 5px;
+    border: none; }
+
+@media screen and (max-width: 768px) {
+  .theme #about-main .info, .light-theme #about-main .info, .dark-theme #about-main .info {
+    grid-template-areas: 'bioimg' 'bio' 'exp1' 'exp2' 'exp3';
+    grid-template-columns: 1fr; } }
+
 .btn, .btn-dark, .btn-light {
   display: block;
   padding: 0.5rem 1rem;
@@ -419,6 +504,10 @@ h1, h2, h3, p, a, i {
   .menu-branding {
     transform: translate3d(0, 100%, 0);
     transition: all 0.5s ease-out; }
+    .menu-branding .icons {
+      margin-top: 1rem; }
+      .menu-branding .icons a {
+        padding: 0.4rem; }
   .menu .prtorait {
     width: 250px;
     height: 250px;
@@ -426,6 +515,7 @@ h1, h2, h3, p, a, i {
     z-index: 500;
     background: url(../img/portrait.jpg);
     background-size: cover;
+    margin-bottom: 1rem;
     border-radius: 50%; }
     .menu .prtorait img {
       width: 100%;
@@ -518,6 +608,10 @@ h1, h2, h3, p, a, i {
     height: 25vh;
     transform: translate3d(100%, 0, 0);
     font-size: 24px; }
+    .menu-branding .icons {
+      display: none; }
+    .menu-branding .sm-heading {
+      display: none; }
   .prtorait {
     max-width: 150px;
     max-height: 150px; } }
