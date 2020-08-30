@@ -85,7 +85,6 @@
         background: $cloudy-background;
         background-attachment: fixed;
         background-size: cover; 
-        z-index: -1;
         small{
             font-size: 14px; 
             font-weight: 400;
@@ -113,8 +112,8 @@
     }
     .projects{
         img{
-            border: solid 3px $light-text;
-            &:hover{ border-color: $light-secondary; }
+            // border: solid 3px $light-text;
+            // &:hover{ border-color: $light-secondary; }
         }
     }
     footer{
@@ -209,7 +208,6 @@
         background: $stary-background;     
         background-attachment: fixed;
         background-size: cover; 
-        z-index: -1;
         .title{
             color: $dark-secondary;
         }
@@ -241,12 +239,6 @@
         border-bottom: solid 5px $dark-secondary;
         .exp-title{
             color: darken($dark-text, 30);
-        }
-    }
-    .projects{
-        img{
-            border: solid 3px $dark-text;
-            &:hover{ border-color: $dark-secondary; }
         }
     }
     footer{

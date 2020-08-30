@@ -1,7 +1,8 @@
 header{
     width: 100%;
+
     .menu-toggler{
-      z-index: 10;
+      z-index: 150;
       position: fixed;
       right: 35px;
       top: 35px;
@@ -47,7 +48,6 @@ header{
           cursor: pointer;
         }
         .toggle-icon {
-            background-image: url("imgs/sun.svg");
             width: 50px;
             height: 50px;
             margin: 10px;
