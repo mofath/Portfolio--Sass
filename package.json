@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://mofath.github.io/portofolio",
   "scripts": {
-    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive",
+    "deploy": "gh-pages -d dist"
   },
   "author": "mofath",
-  "license": "npm"
+  "license": "npm",
+  "dependencies": {
+    "gh-pages": "^3.1.0"
+  }
 }
