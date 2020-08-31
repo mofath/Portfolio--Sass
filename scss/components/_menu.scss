@@ -139,3 +139,25 @@
         max-height: 150px;
     }
 }
+
+
+@include mediaSm {
+    .menu{
+        .nav-item{
+            // background: yellow;
+            
+            a{
+                background: yellow;
+                img{
+                    display: none;
+                    // width: 10px;
+                    // height: 10px;
+                }
+            }
+        }
+        .prtorait{
+            max-width: 100px;
+            max-height: 100px;
+        }
+    }
+}

@@ -439,52 +439,87 @@ header {
 .theme #contact-main, .light-theme #contact-main, .dark-theme #contact-main {
   overflow: hidden;
   display: grid;
-  grid-gap: 30px;
   grid-template-areas: 'form gif';
   grid-template-columns: 60% 40%; }
   .theme #contact-main main, .light-theme #contact-main main, .dark-theme #contact-main main {
-    overflow: hidden;
+    overflow: hidden; }
+  .theme #contact-main form, .light-theme #contact-main form, .dark-theme #contact-main form {
     grid-area: form; }
-  .theme #contact-main aside, .light-theme #contact-main aside, .dark-theme #contact-main aside {
+    .theme #contact-main form button, .light-theme #contact-main form button, .dark-theme #contact-main form button {
+      float: right;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 16px;
+      margin-right: 5px;
+      border-radius: 3px;
+      cursor: pointer; }
+    .theme #contact-main form #name, .light-theme #contact-main form #name, .dark-theme #contact-main form #name, .theme #contact-main form #email, .light-theme #contact-main form #email, .dark-theme #contact-main form #email, .theme #contact-main form textarea, .light-theme #contact-main form textarea, .dark-theme #contact-main form textarea {
+      width: 100%;
+      outline: none;
+      padding: 5px;
+      border-radius: 5px; }
+    .theme #contact-main form fieldset, .light-theme #contact-main form fieldset, .dark-theme #contact-main form fieldset {
+      padding: 5px;
+      border: none; }
+  .theme #contact-main .hire-me, .light-theme #contact-main .hire-me, .dark-theme #contact-main .hire-me {
     grid-area: gif;
     height: auto;
     display: flex;
+    padding: 0 20px;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: center; }
-    .theme #contact-main aside .hire-me, .light-theme #contact-main aside .hire-me, .dark-theme #contact-main aside .hire-me {
-      text-align: center; }
-      .theme #contact-main aside .hire-me img, .light-theme #contact-main aside .hire-me img, .dark-theme #contact-main aside .hire-me img {
-        width: 300px;
-        height: auto; }
-  .theme #contact-main .button-success, .light-theme #contact-main .button-success, .dark-theme #contact-main .button-success {
-    color: white;
-    border-radius: 4px;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    background: #1cb841;
-    /* this is a green */ }
-  .theme #contact-main button, .light-theme #contact-main button, .dark-theme #contact-main button {
-    float: right;
-    font-size: 14px;
-    font-weight: 500;
-    padding: 8px 16px;
-    border-radius: 3px;
-    cursor: pointer; }
-  .theme #contact-main .text, .light-theme #contact-main .text, .dark-theme #contact-main .text {
-    font-weight: bold; }
-  .theme #contact-main #name, .light-theme #contact-main #name, .dark-theme #contact-main #name, .theme #contact-main #email, .light-theme #contact-main #email, .dark-theme #contact-main #email, .theme #contact-main textarea, .light-theme #contact-main textarea, .dark-theme #contact-main textarea {
-    width: 100%;
-    outline: none;
-    padding: 5px;
-    border-radius: 5px; }
-  .theme #contact-main fieldset, .light-theme #contact-main fieldset, .dark-theme #contact-main fieldset {
-    padding: 5px;
-    border: none; }
+    align-items: "center";
+    justify-content: center;
+    text-align: center;
+    margin-left: 10%; }
+    .theme #contact-main .hire-me img, .light-theme #contact-main .hire-me img, .dark-theme #contact-main .hire-me img {
+      width: 300px;
+      height: auto; }
+    .theme #contact-main .hire-me .text, .light-theme #contact-main .hire-me .text, .dark-theme #contact-main .hire-me .text {
+      font-weight: bold;
+      text-align: center;
+      padding-right: 15%; }
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .theme #contact-main, .light-theme #contact-main, .dark-theme #contact-main {
+    grid-template-areas: 'form gif';
+    grid-template-columns: 65% 35%; }
+    .theme #contact-main form, .light-theme #contact-main form, .dark-theme #contact-main form {
+      grid-area: form; }
+      .theme #contact-main form h1.lg-heading, .light-theme #contact-main form h1.lg-heading, .dark-theme #contact-main form h1.lg-heading {
+        font-size: 5em; }
+      .theme #contact-main form h2.sm-heading, .light-theme #contact-main form h2.sm-heading, .dark-theme #contact-main form h2.sm-heading {
+        font-size: 1em; }
+    .theme #contact-main .hire-me, .light-theme #contact-main .hire-me, .dark-theme #contact-main .hire-me {
+      grid-area: gif; }
+      .theme #contact-main .hire-me img, .light-theme #contact-main .hire-me img, .dark-theme #contact-main .hire-me img {
+        width: 250px;
+        height: auto; } }
 
 @media screen and (max-width: 768px) {
-  .theme #about-main .info, .light-theme #about-main .info, .dark-theme #about-main .info {
-    grid-template-areas: 'bioimg' 'bio' 'exp1' 'exp2' 'exp3';
-    grid-template-columns: 1fr; } }
+  .theme #contact-main, .light-theme #contact-main, .dark-theme #contact-main {
+    grid-template-areas: 'form';
+    grid-template-columns: 1fr; }
+    .theme #contact-main form, .light-theme #contact-main form, .dark-theme #contact-main form {
+      grid-area: form; }
+      .theme #contact-main form h1.lg-heading, .light-theme #contact-main form h1.lg-heading, .dark-theme #contact-main form h1.lg-heading {
+        font-size: 4.5em; }
+      .theme #contact-main form h2.sm-heading, .light-theme #contact-main form h2.sm-heading, .dark-theme #contact-main form h2.sm-heading {
+        font-size: 1em; }
+    .theme #contact-main .hire-me, .light-theme #contact-main .hire-me, .dark-theme #contact-main .hire-me {
+      display: none; } }
+
+@media screen and (min-width: 320px) and (max-width: 500px) {
+  .theme #contact-main, .light-theme #contact-main, .dark-theme #contact-main {
+    grid-template-areas: 'form';
+    grid-template-columns: 1fr; }
+    .theme #contact-main form, .light-theme #contact-main form, .dark-theme #contact-main form {
+      grid-area: form; }
+      .theme #contact-main form h1.lg-heading, .light-theme #contact-main form h1.lg-heading, .dark-theme #contact-main form h1.lg-heading {
+        font-size: 3.5em; }
+      .theme #contact-main form h2.sm-heading, .light-theme #contact-main form h2.sm-heading, .dark-theme #contact-main form h2.sm-heading {
+        font-size: 0.8em; }
+    .theme #contact-main .hire-me, .light-theme #contact-main .hire-me, .dark-theme #contact-main .hire-me {
+      display: none; } }
 
 .btn, .btn-dark, .btn-light {
   display: block;
@@ -511,6 +546,7 @@ h1, h2, h3, p, a, i {
   h1.lg-heading, h2.lg-heading, h3.lg-heading, p.lg-heading, a.lg-heading, i.lg-heading {
     font-size: 6em; }
   h1.sm-heading, h2.sm-heading, h3.sm-heading, p.sm-heading, a.sm-heading, i.sm-heading {
+    font-size: 1.5em;
     margin-bottom: 1rem;
     padding: 0.2rem 1rem; }
 
@@ -651,6 +687,15 @@ h1, h2, h3, p, a, i {
   .prtorait {
     max-width: 150px;
     max-height: 150px; } }
+
+@media screen and (min-width: 320px) and (max-width: 500px) {
+  .menu .nav-item a {
+    background: yellow; }
+    .menu .nav-item a img {
+      display: none; }
+  .menu .prtorait {
+    max-width: 100px;
+    max-height: 100px; } }
 
 footer {
   height: 60px;

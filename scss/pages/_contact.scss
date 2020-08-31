@@ -2,74 +2,123 @@
     #contact-main{
         overflow: hidden;
         display: grid;
-        grid-gap: 30px;
         grid-template-areas:'form gif';
         grid-template-columns: 60% 40%;
         main{
             overflow: hidden;
-            grid-area: form;
         }
-        aside{
+        form{
+            grid-area: form;
+            button {
+                float: right;
+                font-size: 14px;
+                font-weight: 500;
+                padding: 8px 16px;
+                margin-right: 5px;
+                border-radius: 3px;
+                cursor: pointer;
+            }
+            #name, #email, textarea {
+                width: 100%; 
+                outline: none;
+                padding: 5px;
+                border-radius: 5px;
+            }
+            fieldset{
+                padding: 5px;
+                border: none;
+            }
+        }
+        .hire-me{
             grid-area: gif;
             height: auto;
             display: flex;
+            padding: 0 20px ;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: "center";
             justify-content: center;
-            .hire-me{
-                text-align: center;
+            text-align: center;
+            margin-left: 10%;
+            // background: yellow;
                 img{
                     width: 300px;
                     height: auto;
                 }
-            }
-
-        }
-        .button-success {
-            color: white;
-            border-radius: 4px;
-            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-            background: rgb(28, 184, 65); /* this is a green */
-        }
-        button {
-            float: right;
-            font-size: 14px;
-            font-weight: 500;
-            padding: 8px 16px;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-        .text{
-            font-weight: bold;
-      }
-        #name, #email, textarea {
-            width: 100%; 
-            outline: none;
-            padding: 5px;
-        
-            border-radius: 5px;
-        }
-        fieldset{
-            padding: 5px;
-            border: none;
+                .text{
+                    font-weight: bold;
+                    text-align: center;
+                    padding-right: 15%;
+                }
         }
     }
 }
 
-// tablets
+
+@include mediaLg {
+    .theme{
+        #contact-main{
+            grid-template-areas: 'form gif';
+            grid-template-columns: 65% 35%;
+            form{
+                grid-area: form;
+                h1.lg-heading{
+                    font-size:5em;
+                }
+                h2.sm-heading{
+                    font-size: 1em;;
+                }
+            }
+            .hire-me{
+                grid-area: gif;
+                img{
+                    width: 250px;
+                    height: auto;
+                }
+            }
+        }
+    }
+ }
+
+
 @include mediaMd {
     .theme{
-        #about-main{
-            .info{
-                grid-template-areas: 
-                'bioimg'
-                'bio'
-                'exp1'
-                'exp2'
-                'exp3' ;
-
-                grid-template-columns: 1fr;   
+        #contact-main{
+            grid-template-areas: 'form';
+            grid-template-columns: 1fr;  
+            form{
+                grid-area: form;
+                h1.lg-heading{
+                    font-size:4.5em;
+                }
+                h2.sm-heading{
+                    font-size: 1em;;
+                }
+            } 
+            .hire-me{
+                display: none;
             }
         }
     }
-}
+ }
+
+
+ @include mediaSm {
+    .theme{
+        #contact-main{
+            grid-template-areas: 'form';
+            grid-template-columns: 1fr;
+            form{
+                grid-area: form;
+                h1.lg-heading{
+                    font-size:3.5em;
+                }
+                h2.sm-heading{
+                    font-size: 0.8em;;
+                }
+            }
+            .hire-me{
+                display: none;
+            }
+        }
+    }
+ }

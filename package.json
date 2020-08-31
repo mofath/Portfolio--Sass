@@ -1,19 +1,23 @@
 {
-  "name": "portofolio--sass",
+  "name": "Portfolio--Sass",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://mofath.github.io/portfolio",
   "scripts": {
-    "sass": "node-sass -w scss/ -o dist/css/ --recursive",
-    "deploy": "gh-pages -d dist"
+    "sass": "node-sass -w scss/ -o css/ --recursive"
   },
-  "author": "mofath",
-  "license": "npm",
-  "dependencies": {
-    "gh-pages": "^3.1.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mofath/Portfolio--Sass.git"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mofath/Portfolio--Sass/issues"
+  },
+  "homepage": "https://github.com/mofath/Portfolio--Sass#readme",
   "devDependencies": {
-    "gulp-sass": "^4.1.0"
+    "node-sass": "^4.14.1"
   }
 }
