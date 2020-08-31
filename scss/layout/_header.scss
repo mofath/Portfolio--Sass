@@ -1,0 +1,74 @@
+header{
+    width: 100%;
+
+    .menu-toggler{
+      z-index: 150;
+      position: fixed;
+      right: 35px;
+      top: 35px;
+      cursor: pointer;
+      @include easeOut;
+      span {
+          width: 28px;
+          display: block;
+          height: 3px;
+          &:not(:last-child){  margin-bottom: 5px; }
+          @include easeOut; 
+      }
+      &.close{
+          span{
+              &:first-child{ transform: rotate(45deg) translate(5px, 5px); }
+              &:last-child{ transform: rotate(-45deg) translate(7px, -6px); }
+              &:nth-child(2){ opacity: 0 }
+          }
+      }
+  }
+  
+  .mode-toggler {
+        position: relative;
+        top: 35px;
+        left: 5%;
+        width: 150px;
+        height: 70px;
+        border-radius: 50px;
+        label {
+          width: 70px;
+          height: 70px;
+          border-radius: 100px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          pointer-events: none;
+        }
+        input {
+          opacity: 0.3;
+          width: 150px;
+          height: 70px;
+          opacity: 0;
+          cursor: pointer;
+        }
+        .toggle-icon {
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+            display: inline-block;
+            border-radius: 100px;
+            pointer-events: none;
+            position: relative;
+            transition:  #{$transition-all};
+            .icon {
+                position: absolute;
+                top: 0;
+                left: 0;
+                transition: #{$transition-all};
+            }
+          .moon { opacity: 0;}
+        }
+    }
+}
+
+
+
+// input:checked + label .toggle-icon { transform: translateX(80px) rotate(360deg);  }  
+// input:checked + label .icon.moon { opacity: 1;  }
+// input:checked + label .icon.sun { opacity: 0; } 
