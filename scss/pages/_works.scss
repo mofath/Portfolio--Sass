@@ -91,3 +91,51 @@
 }
 
 
+@include mediaSm {
+    .theme{
+       &#works{        
+            main{
+                padding: 5rem 35px;
+                .cat-filters{  width: 100%; }
+            }
+            .projects{
+                display: flex;
+                justify-content: center;
+                li{
+                    width: 250px!important;
+                    height: auto;
+                    img{
+                        width: 100%;
+                        border-bottom: solid 0.5px #c0c0c0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+ 
+ @include mediaXS {
+    .theme{
+        &#works{        
+             main{
+                 padding: 5rem 35px;
+                 .cat-filters{  width: 100%; }
+             }
+             .projects{
+                 display: flex;
+                 justify-content: center;
+                 li{
+                     width: 230px!important;
+                     height: auto;
+                     img{
+                         width: 100%;
+                         border-bottom: solid 0.5px #c0c0c0;
+                     }
+                 }
+             }
+         }
+     }
+ }
+ 

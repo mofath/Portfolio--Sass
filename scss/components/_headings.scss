@@ -3,7 +3,10 @@ h1, h2, h3, p , a, i{
     font-family: 'Baloo 2', cursive;
     margin:0;
     font-weight: 500;
-    &.lg-heading{ font-size: 6em;}
+    &.lg-heading{ 
+        font-size: 6em;
+        font-weight: bold;
+    }
     &.sm-heading{
         font-size: 1.5em;
         margin-bottom: 1rem;

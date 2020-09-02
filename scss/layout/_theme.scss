@@ -1,55 +1,5 @@
 .light-theme {
     @extend .theme;
-    // start menu toggler
-    .menu-toggler{
-        span{  background-color: $light-text;   }
-    }
-    // start mode toggler
-    .mode-toggler{
-        border: 0.1px solid lighten($light-primary, $color-change-amount);
-        background-color: $light-primary;
-        box-shadow: 
-            inset 10px 10px 15px darken($light-primary, $color-change-amount),
-            inset -10px -10px 15px lighten($light-primary, $color-change-amount);
-        &.toggle-icon {
-            box-shadow: 
-                /* offset */ 0px 0px 0px 3px $light-primary,
-                /*bottom right */ 4px 4px 7px darken($light-primary, $color-change-amount),
-                /* top left */ -4px -4px 7px lighten($light-primary, $color-change-amount);
-        }
-    }
-    
-    // start home overlay
-    .overlay {
-        background-image: linear-gradient(120deg, $light-primary,white, $light-primary);
-        opacity: $background-opacity;
-    }   
-    // start home icons
-    .icons{
-        a {color: $light-text;}
-        a:hover{color:$light-secondary}
-    }
-    .menu-nav{
-        background-color: rgba(darken($light-primary, 5), 0.9);
-    }
-    .menu-branding {
-        background-color: rgba($light-primary, 0.9);
-    }
-    .prtorait{
-        border: solid 5px $light-secondary;
-    }
-    .nav-item{
-        &.current > a {
-            color: $light-secondary; 
-            span{
-                font-size: 25px;
-            }
-        }
-        a{
-            color: $light-text;
-            &:hover{ color: $light-secondary;  }
-        }
-    }
     .lg-heading{
         color: $light-text;
         span{  color: $light-secondary;  }
@@ -58,40 +8,97 @@
         color: $light-text;
         background-color: rgba(lighten($light-primary, 2), 0.5);
     }
+    .icons{
+        a {color: $light-text;}
+        a:hover{color:$light-secondary}
+    }
 
-    #contact-main{
-        .button-success {
-            color: white;
-            // border-radius: 4px;
-            // text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-            // background: rgb(28, 184, 65); /* this is a green */
+    // header
+    header {
+        .menu-toggler{
+            span{  background-color: $light-text;   }
         }
+        .mode-toggler{
+            border: 0.1px solid lighten($light-primary, $color-change-amount);
+            background-color: $light-primary;
+            box-shadow: 
+                inset 10px 10px 15px darken($light-primary, $color-change-amount),
+                inset -10px -10px 15px lighten($light-primary, $color-change-amount);
+            &.toggle-icon {
+                box-shadow: 
+                    /* offset */ 0px 0px 0px 3px $light-primary,
+                    /*bottom right */ 4px 4px 7px darken($light-primary, $color-change-amount),
+                    /* top left */ -4px -4px 7px lighten($light-primary, $color-change-amount);
+            }
+        }
+    }
+    // menu
+    .menu {
+        .menu-nav{
+            background-color: rgba(darken($light-primary, 5), 0.9);
+        }
+        .menu-branding {
+            background-color: rgba($light-primary, 0.9);
+        }
+        .prtorait{
+            border: solid 5px #b698ff;
+        }
+        .nav-item{
+            &.current > a {
+                color: $light-secondary; 
+                span{
+                    font-size: 25px;
+                }
+            }
+            a{
+                color: $light-text;
+                &:hover{ color: $light-secondary;  }
+            }
+        }
+    }
+
+    &#about{
+        .bio-img{
+            border: solid 3px #b698ff;
+        }
+        .timeline{
+            background: darken($light-primary, 5);
+            border-bottom: solid 5px $light-secondary;
+        }
+    }
+    &#home{
+        .overlay {
+            background-image: linear-gradient(120deg, $light-primary,white, $light-primary);
+            opacity: $background-opacity;
+        }
+    }
+    &#contact{
         #name, #email, textarea {
             border: solid 1px lighten($light-secondary, 50);
         }
         button{
-            // border: solid 1px $light-secondary;
             outline: none;
             border: none;
-            background-color: darken(#e7e1f9, 20);
+            background-color: $light-secondary;
             color: white;
             &:hover{
                 outline: none;
-                background-color: darken(#e7e1f9, 10);
+                background-color: lighten($light-secondary, 10);
             }
         }
     }
-    &#about, &#works &#contact{        
+    &#about, &#works, &#contact{        
         background: $cloudy-background;
         background-attachment: fixed;
         background-size: cover; 
-        small{
-            font-size: 14px; 
-            font-weight: 400;
-            color: darken($light-secondary, 30) ;
+        color: $light-text;
+        .sub-title{
+            color: $light-secondary;
+            font-weight: bold;
+            margin-bottom: 1vh;
         }
         &:after{
-            content: ""; // ::before and ::after both require content
+            content: ""; 
             position: fixed;
             top: 0;
             left: 0;
@@ -101,15 +108,8 @@
             opacity: $background-opacity;
             z-index: -1;
         }
-        // overflow: hidden;
     }
-    .bio-img{
-        border: solid 3px $light-secondary;
-    }
-    .exp{
-        background: darken($light-primary, 5);
-        border-bottom: solid 5px $light-secondary;
-    }
+
     footer{
         background-color: darken($light-primary, 10);
         color: $light-text;
@@ -176,18 +176,23 @@
         color: $dark-text;
         background-color: rgba(lighten($dark-primary, 2), 0.5);
     }
-    #contact-main{
-        .button-success {
-            color: white;
-            // border-radius: 4px;
-            // text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-            // background: rgb(28, 184, 65); /* this is a green */
+    &#about{
+        .bio-img{
+            border: solid 3px $dark-secondary;
         }
+        .timeline{
+            background: lighten($dark-primary, 3);
+            border-bottom: solid 5px $dark-secondary;
+            .title{
+                color: darken($dark-text, 30);
+            }
+        }
+    }
+    &#contact{
         #name, #email, textarea {
             border: solid 1px lighten($dark-secondary, 50);
         }
         button{
-            // border: solid 1px $light-secondary;
             outline: none;
             border: none;
             background-color: darken($dark-secondary, 10);
@@ -198,7 +203,7 @@
             }
         }
     }
-    &#about, &#about &#contact{        
+    &#about, &#works, &#contact{        
         background: $stary-background;     
         background-attachment: fixed;
         background-size: cover; 
@@ -206,12 +211,9 @@
             color: $dark-secondary;
         }
         .sub-title{
-            color: darken($dark-text, 20);
-        }
-        small{
-            font-size: 14px; 
-            font-weight: 400;
-            color: #9a9a9a ;
+            color: $dark-secondary;
+            font-weight: bold;
+            margin-bottom: 1vh;
         }
         &:after{
             content: ""; 
@@ -225,16 +227,7 @@
             z-index: -1;
         }
     }
-    .bio-img{
-        border: solid 3px $dark-secondary;
-    }
-    .exp{
-        background: lighten($dark-primary, 3);
-        border-bottom: solid 5px $dark-secondary;
-        .exp-title{
-            color: darken($dark-text, 30);
-        }
-    }
+
     footer{
         background: lighten($dark-primary, 1);
     }
@@ -258,23 +251,102 @@
         margin:  0 0 ;
     }
     main{
-        padding: 5rem 6rem 5rem 5%;
-        min-height: calc(100vh - 130px);
+        padding: 5rem 5rem;
     }
     a{
         text-decoration: none;
     }
     min-width:320px;
     margin: 0!important;
-    
-    @include mediaMd {
-        main{
-            align-items: center;
-            text-align: center;
-            .lg-heading{
-                line-height: 1;
-                margin-bottom: 1rem;
+}
+
+
+
+
+// *********************************************************** //
+//                      media querry                           //
+// *********************************************************** //
+@include mediaLg {
+    .theme{
+       main{
+            h1.lg-heading{
+                font-size:5em;
+            }
+            h2.sm-heading{
+                font-size: 1em;;
             }
         }
     }
 }
+
+@include mediaMd {
+    .theme{
+        &#about, &#works, &#contact{        
+            h1.lg-heading{
+                // background-color: darkorange;
+                font-size:4.5em;
+                text-align: center;
+            }
+            h2.sm-heading{
+                font-size: 1em;;
+                text-align: center;
+            } 
+        }
+    }
+ }
+
+
+ @include mediaSm {
+    .theme{
+        &#about, &#works, &#contact{        
+            h1.lg-heading{
+                text-align: center;
+                font-size:3.2em;
+            }
+            h2.sm-heading{
+                font-size: 0.8em;
+                text-align: center;
+            }
+            main{
+                padding: 70px 35px!important;
+            }
+        }
+    }
+ }
+
+
+ 
+ @include mediaXS {
+    .theme{
+        &#about, &#works, &#contact{        
+            h1.lg-heading{
+                // background-color: red;
+                text-align: center;
+                font-size:2.5em;
+            }
+            h2.sm-heading{
+                font-size: 0.8em;
+                text-align: center;
+            }
+            .sub-title{
+                text-align: center;
+            }
+
+            main{
+                padding: 100px 25px!important;
+            }
+        }
+        &#home{        
+            h1.lg-heading{
+                font-size:3em;
+            }
+            h2.sm-heading{
+                font-size: 0.8em;;
+            } 
+            .sub-title{
+                text-align: center;
+            }
+        }
+    }
+ }
+

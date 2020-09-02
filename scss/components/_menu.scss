@@ -133,25 +133,21 @@
         .sm-heading{
             display: none;
         }
-    }
-    .prtorait{
-        max-width: 150px;
-        max-height: 150px;
+        .prtorait{
+            max-width: 150px;
+            max-height: 150px;
+        }
     }
 }
 
 
 @include mediaSm {
     .menu{
-        .nav-item{
-            // background: yellow;
-            
+        .nav-item{            
             a{
-                background: yellow;
+                margin-bottom: 70px;
                 img{
                     display: none;
-                    // width: 10px;
-                    // height: 10px;
                 }
             }
         }
@@ -161,3 +157,22 @@
         }
     }
 }
+
+
+@include mediaXS {
+    .menu{
+        .nav-item{            
+            a{
+                margin-bottom: 50px;
+                img{
+                    display: none;
+                }
+            }
+        }
+        .prtorait{
+            max-width: 100px;
+            max-height: 100px;
+        }
+    }
+}
+

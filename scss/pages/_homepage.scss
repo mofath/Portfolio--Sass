@@ -1,14 +1,14 @@
-
-#home{
-    background: $home-image;
-    background-attachment: fixed;
-    background-size: cover; 
-    overflow: hidden;
-}
-
 .theme {
+    &#home{
+        background: $home-image;
+        background-attachment: fixed;
+        background-size: cover; 
+        overflow: hidden!important;
+
+    }
     .overlay{
         content: '';
+        overflow: hidden!important;
         position: absolute;
         top: 0;
         left: 0;
@@ -17,6 +17,7 @@
         z-index: -1;
     }
     #home-main{
+        overflow: hidden!important;
         display: grid;
         grid-template-areas: 'content solar';
         grid-template-columns: repeat(2, 1fr);
@@ -45,42 +46,118 @@
 
 @include mediaLg {
     .theme{
-        #home-main{
-            overflow: hidden;
-            grid-template-areas: 'content' 'solar';
-            grid-template-columns: 1fr;
-            .content{
-                grid-area: content;
-            }
-            .solar-skills{
-                grid-area: solar;
-                position: absolute;
-                opacity: 0.4;
-                .skills-top-circle{
-                    opacity: 0;
+        #home{
+            overflow: hidden!important;
+            #home-main{
+                overflow: hidden!important;
+                grid-template-areas: 'content' 'solar';
+                grid-template-columns: 1fr;
+                .content{
+                    grid-area: content;
+                }
+                .solar-skills{
+                    grid-area: solar;
+                    position: absolute;
+                    opacity: 0.4;
+                    .skills-top-circle{
+                        opacity: 0;
+                    }
                 }
             }
         }
-    }
+        }
 }
 
 
 @include mediaMd {
     .theme{
+        &#home{
+            background: none !important;
+            overflow: hidden!important;
+            h1.lg-heading{
+                // background-color: darkorange;
+                font-size:4em;
+                text-align: center;
+            }
+            h2.sm-heading{
+                font-size: 1em;;
+                text-align: center;
+            } 
+        }
         #home-main{
             grid-template-areas: 'content' 'solar';
             grid-template-columns: 1fr;
+            overflow: hidden!important;
+            .icons{
+                display: flex;
+                justify-content: center;
+            }
             .content{
                 grid-area: content;
             }
             .solar-skills{
-                grid-area: solar;
-                position: absolute;
-                opacity: 0.4;
-                .skills-top-circle{
-                    opacity: 0;
+                display: none!important;
+            }
+        }
+    }
+}
+
+
+@include mediaSm {
+    .theme{
+        &#home{
+            background: none !important;
+            overflow: hidden !important;
+            h1.lg-heading{ font-size:2.5em; }
+            h2.sm-heading{ 
+                font-size: 1em; 
+                text-align: center;
+            }
+            #home-main{
+                overflow: hidden!important;
+                display: flex;
+                justify-content: center;
+                .icons{
+                    display: flex;
+                    justify-content: center;
+                }
+                .solar-skills{
+                    display: none!important;
                 }
             }
         }
     }
 }
+
+
+@include mediaXS {
+    .theme{
+        &#home{   
+            overflow: hidden!important;     
+            h1.lg-heading{
+                font-size:1.8em;
+            }
+            h2.sm-heading{
+                font-size: 0.5em;;
+            }
+            #home-main{
+                overflow: hidden!important;
+                .content{
+                    grid-area: content;
+                    h1{ margin-top: 3vh; }
+                    .icons{
+                        margin-top: 1rem;
+                        a{
+                            padding: 0.2rem;
+                        }
+                    }
+                }
+             }
+            
+        }
+    }
+ }
+
+
+
+

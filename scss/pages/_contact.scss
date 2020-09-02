@@ -21,7 +21,7 @@
             #name, #email, textarea {
                 width: 100%; 
                 outline: none;
-                padding: 5px;
+                padding: 10px 10px;
                 border-radius: 5px;
             }
             fieldset{
@@ -105,15 +105,19 @@
  @include mediaSm {
     .theme{
         #contact-main{
+            // overflow: hidden!important;
             grid-template-areas: 'form';
             grid-template-columns: 1fr;
+            
             form{
                 grid-area: form;
                 h1.lg-heading{
-                    font-size:3.5em;
+                    text-align: center;
+                    font-size:3em;
                 }
                 h2.sm-heading{
-                    font-size: 0.8em;;
+                    font-size: 0.8em;
+                    text-align: center;
                 }
             }
             .hire-me{
@@ -122,3 +126,24 @@
         }
     }
  }
+
+
+ 
+ @include mediaXS {
+    .theme{
+        #contact-main{
+            overflow: hidden!important;
+            form{     
+                h1.lg-heading{
+                    text-align: center;
+                    font-size:1.8em;
+                }
+                h2.sm-heading{
+                    font-size: 0.8em;
+                    text-align: center;
+                }
+            }
+        }
+    }
+ }
+

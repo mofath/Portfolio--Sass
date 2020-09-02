@@ -14,12 +14,12 @@ let darkMode = localStorage.getItem('darkMode')? localStorage.getItem('darkMode'
 const sunrise = () => {
   toggleIcons.children[0].style.opacity = "1";
   toggleIcons.children[1].style.opacity = "0";
-  toggleIcons.children[1].style.transform = "translateX(-80px) rotate(-360deg)"
+  toggleIcons.children[1].style.transform = "translateX(-54px) rotate(-360deg)"
 }
 const sunset = () => {
   toggleIcons.children[0].style.opacity = "0";
   toggleIcons.children[1].style.opacity = "1";
-  toggleIcons.children[1].style.transform = "translateX(80px) rotate(360deg)"
+  toggleIcons.children[1].style.transform = "translateX(54px) rotate(360deg)"
 }
 
 const enableDarkMode = async () => {

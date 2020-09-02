@@ -1,28 +1,12 @@
 .theme {
     #about-main{
-        .title{ font-weight: 600; }
-        .sub-title{
-            padding: 1vh 0;
-            font-weight: 300;
-        }
-        .exp-title{
-            padding-bottom: 20px;
-        }
-        .break{
-            margin-bottom: 5px;
-        }
-        p{
-            text-align: justify;
-            padding-right: 30px;
-        }
         .info{
             display: grid;
-            grid-gap: 30px;
+            grid-gap: 50px;
             grid-template-areas: 
-            'bioimg bio bio'
-            'exp1 exp2 exp3' ;
-            grid-template-columns: repeat(3, 1fr);
-            
+            'bioimg bioimg  bio  bio bio  bio'
+            'exp exp exp edu edu edu' ;
+            grid-template-columns: repeat(6, 1fr);
             .bio-img{
                 grid-area: bioimg;
                 margin: auto;
@@ -30,21 +14,69 @@
                 max-width: 250px;
                 max-height: 250px;
             }
-        
-            .bio{ grid-area: bio; }
-        
-            .exp:nth-child(1){ grid-area: exp3; }
-            .exp:nth-child(2){ grid-area: exp2; }
-            .exp:nth-child(3){ grid-area: exp1; }
-        
-            .exp{
-                padding: 10px;
+            .bio{ 
+                grid-area: bio; 
+                padding-right: 15px;
+            }
+            .experience{ grid-area: exp; }
+            .education{ grid-area: edu; }
+            .experience, .education{
+                float: left;
+                .timeline{
+                    margin-top: 1vh;
+                    border-radius: 5px;
+                    .timeline-body{
+                        position: relative;
+                        margin-left: 35px;
+                        padding: 5px 0;
+                        &:after{
+                            content: "";
+                            width: 1px;
+                            height: 100%;
+                            position: absolute;
+                            background:$grey;
+                            left: -4px;
+                            top: 0;
+                        }
+                        .timeline-item{
+                            position: relative;
+                            &:after{
+                                content: "";
+                                width: 20px;
+                                height: 20px;
+                                border-radius: 50%;
+                                background: $grey;
+                                position: absolute;
+                                left: -13px;
+                                top: 25px;
+                                z-index: 3;
+                            }
+                            .content{
+                                padding: 25px 15px 25px 30px;
+                                .title{
+                                    font-weight: 400;
+                                    margin: 15px 0;
+                                }
+                                .time{  
+                                    font-size: 14px; 
+                                }
+                                .text{ text-align: justify; padding-right: 30px; }
+                                .break{ margin-bottom: 10px;  }
+                            }
+                        }
+                        &:nth-child(2){
+                            .content{
+                                border-top: dashed 1px $grey;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
 }
 
-// tablets
+
 @include mediaMd {
     .theme{
         #about-main{
@@ -52,11 +84,61 @@
                 grid-template-areas: 
                 'bioimg'
                 'bio'
-                'exp1'
-                'exp2'
-                'exp3' ;
+                'exp'
+                'edu';
+                grid-template-columns: 1fr; 
 
-                grid-template-columns: 1fr;   
+                .bio {
+                    .text{
+                        text-align: center;
+                    }
+                    .sub-title{
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@include mediaSm {
+    .theme{
+        #about-main{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .info{
+                .bio {
+                    .text{
+                        text-align: center;
+                    }
+                    .sub-title{
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@include mediaXS {
+    .theme{
+        #about-main{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .info{
+                .bio p.text{
+                    text-align: center;
+                }
+                .bio-img{
+                    max-width: 170px;
+                    max-height: 170px;
+                }
             }
         }
     }
